@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  generation: 1
+  name: guestbook-kustomize
+  selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/appprojects/guestbook-kustomize
+spec:
+  description: A complex kustomize project to deploy a fancy guestbook.
+  destinations:
+  - namespace: mircea-test
+    server: https://kubernetes.default.svc
+  - namespace: mircea-prod
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/mircea-cosbuc/argocd-example-apps
